@@ -34,8 +34,56 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 ====================
+
+npm run dev
+
 MATERIAL UI V4 (NOT UPDATE)
 https://v4.mui.com/getting-started/installation/
 npm install @material-ui/core
 
-xxx
+MNGODB COMMUNITY SERVER
+https://www.mongodb.com/try/download/community
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x-tarball/
+user: piyapoonsawat@yahoo.com
+pwd: mongo1234
+
+RUN AS A SERVICE
+brew services start mongodb-community@5.0
+brew services stop mongodb-community@5.0
+
+OR RUN IN BACKGROUND (NOT RECOMMENDED)
+mongod --config /usr/local/etc/mongod.conf --fork
+
+PAYPAL
+https://developer.paypal.com/home/
+thepiyz@gmail.com
+paypal1q2w#E$R
+
+Sandbox account
+sb-d43l014020904@business.example.com
+Client ID
+AcYiSvf3WZH3X9JadtATs9APNP2qCUCQsj0LxyR5q4ufjU45qH7XO5ZuUwi6OiGyFetJl6qu1zUA51B9
+
+sb-pzn47c14019813@personal.example.com
+12345678
+
+Cloudinar
+piyapoonsawat@yahoo.com
+cloud1q2w#E$R
+
+EMAIL VERIFICATION
+https://stackoverflow.com/questions/5601647/html5-email-input-pattern-attribute
+
+SOLVE ERROR 'CATEGORY' FROM CHART
+import {
+Chart as ChartJS,
+CategoryScale,
+LinearScale,
+BarElement,
+} from 'chart.js';
+
+ChartJS.register(
+CategoryScale,
+LinearScale,
+BarElement,
+);
