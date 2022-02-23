@@ -46,6 +46,8 @@ https://www.mongodb.com/try/download/community
 https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x-tarball/
 user: piyapoonsawat@yahoo.com
 pwd: mongo1234
+username : piya
+database user name: thepiyz, nextamazona (nextamazona1234)
 
 RUN AS A SERVICE
 brew services start mongodb-community@5.0
