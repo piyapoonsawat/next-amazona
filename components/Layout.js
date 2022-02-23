@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Head from 'next/head';
 import NextLink from 'next/link';
 import {
@@ -26,6 +26,13 @@ export default function Layout({ title, description, children }) {
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
   const { darkMode, cart, userInfo } = state;
+
+  const [darkModeState, setDarkModeState] = useState(false);
+
+  useEffect(() => {
+    setDarkModeState(darkMode);
+  }, []);
+
   const theme = createTheme({
     typography: {
       h1: {
@@ -50,21 +57,26 @@ export default function Layout({ title, description, children }) {
     },
   });
   const classes = useStyles();
+
   const darkModeChangeHandler = () => {
     dispatch({ type: darkMode ? 'DARK_MODE_OFF' : 'DARK_MODE_ON' });
     const newDarkMode = !darkMode;
+    setDarkModeState(newDarkMode);
     Cookies.set('darkMode', newDarkMode ? 'ON' : 'OFF');
   };
+
   const [anchorEl, setAnchorEl] = useState(null);
   const loginClickHandler = (e) => {
     setAnchorEl(e.currentTarget);
   };
+
   const loginMenuCloseHandler = (e, redirect) => {
     setAnchorEl(null);
-    if (redirect) {
+    if (redirect !== 'backdropClick') {
       router.push(redirect);
     }
   };
+
   const logoutClickHandler = () => {
     setAnchorEl(null);
     dispatch({ type: 'USER_LOGOUT' });
@@ -90,7 +102,7 @@ export default function Layout({ title, description, children }) {
             <div className={classes.grow}></div>
             <div>
               <Switch
-                checked={darkMode}
+                checked={darkModeState}
                 onChange={darkModeChangeHandler}
               ></Switch>
               <NextLink href="/cart" passHref>
@@ -156,7 +168,9 @@ export default function Layout({ title, description, children }) {
             </div>
           </Toolbar>
         </AppBar>
-        <Container className={classes.main}>{children}</Container>
+        <Container className={classes.main} maxWidth={'lg'}>
+          {children}
+        </Container>
         <footer className={classes.footer}>
           <Typography>All rights reserved. Next Amazona.</Typography>
         </footer>

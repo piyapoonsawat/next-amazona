@@ -21,6 +21,15 @@ import { Store } from '../../utils/Store';
 import Layout from '../../components/Layout';
 import useStyles from '../../utils/styles';
 
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+} from 'chart.js';
+
+ChartJS.register(CategoryScale, LinearScale, BarElement);
+
 function reducer(state, action) {
   switch (action.type) {
     case 'FETCH_REQUEST':

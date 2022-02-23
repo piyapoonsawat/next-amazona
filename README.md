@@ -51,7 +51,9 @@ pwd: mongo1234
 username : piya
 database user name: thepiyz, nextamazona (nextamazona1234)
 
-RUN AS A SERVICE
+https://account.mongodb.com/account/login
+
+LOCAL RUN AS A SERVICE
 brew services start mongodb-community@5.0
 brew services stop mongodb-community@5.0
 
@@ -110,6 +112,31 @@ CategoryScale,
 LinearScale,
 BarElement,
 );
+
+SWITCH IN LAYOUT
+const [darkModeState, setDarkModeState] = useState(false);
+useEffect(() => {
+setDarkModeState(darkMode);
+}, []);
+const darkModeChangeHandler = () => {
+dispatch({ type: darkMode ? 'DARK_MODE_OFF' : 'DARK_MODE_ON' });
+const newDarkMode = !darkMode;
+setDarkModeState(newDarkMode);
+Cookies.set('darkMode', newDarkMode ? 'ON' : 'OFF');
+};
+
+<Switch 
+                checked={darkModeState}
+                onChange={darkModeChangeHandler}
+              ></Switch>
+
+BACKDROP IN LAYOUT
+const loginMenuCloseHandler = (e, redirect) => {
+setAnchorEl(null);
+if (redirect !== 'backdropClick') {
+router.push(redirect);
+}
+};
 
 ├ ○ /404 194 B 103 kB
 ├ ○ /admin/dashboard 65 kB 480 kB
