@@ -29,7 +29,6 @@ export default function Register() {
   const { redirect } = router.query;
   const { state, dispatch } = useContext(Store);
   const { userInfo } = state;
-
   useEffect(() => {
     if (userInfo) {
       router.push('/');
@@ -50,7 +49,7 @@ export default function Register() {
         password,
       });
       dispatch({ type: 'USER_LOGIN', payload: data });
-      Cookies.set('userInfo', JSON.stringify(data));
+      Cookies.set('userInfo', data);
       router.push(redirect || '/');
     } catch (err) {
       enqueueSnackbar(getError(err), { variant: 'error' });

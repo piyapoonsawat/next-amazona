@@ -12,6 +12,7 @@ handler.get(async (req, res) => {
   await db.disconnect();
   res.send(product);
 });
+
 handler.put(async (req, res) => {
   await db.connect();
   const product = await Product.findById(req.query.id);
@@ -32,6 +33,7 @@ handler.put(async (req, res) => {
     res.status(404).send({ message: 'Product Not Found' });
   }
 });
+
 handler.delete(async (req, res) => {
   await db.connect();
   const product = await Product.findById(req.query.id);
@@ -44,4 +46,5 @@ handler.delete(async (req, res) => {
     res.status(404).send({ message: 'Product Not Found' });
   }
 });
+
 export default handler;

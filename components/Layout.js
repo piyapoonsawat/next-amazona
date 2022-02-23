@@ -7,7 +7,6 @@ import {
   Typography,
   Container,
   Link,
-  createTheme,
   ThemeProvider,
   CssBaseline,
   Switch,
@@ -16,6 +15,7 @@ import {
   Menu,
   MenuItem,
 } from '@material-ui/core';
+import { createTheme } from '@material-ui/core/styles';
 import useStyles from '../utils/styles';
 import { Store } from '../utils/Store';
 import Cookies from 'js-cookie';
