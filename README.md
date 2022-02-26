@@ -37,6 +37,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 https://github.com/basir/next-amazona
 
+https://vercel.com/login
+https://next-amazona-topaz.vercel.app/
+
 npm run dev
 
 MATERIAL UI V4 (NOT UPDATE)
