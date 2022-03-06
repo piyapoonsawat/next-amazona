@@ -61,7 +61,7 @@ function Map() {
             lng: position.coords.longitude,
           });
         },
-        (err) => {
+        () => {
           enqueueSnackbar('Geolocation is not supported by this browser', {
             variant: 'error',
           });
